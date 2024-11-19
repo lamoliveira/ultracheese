@@ -1,0 +1,885 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head><style>img.lazy{min-height:1px}</style><link rel="preload" href="https://cruzilia.com.br/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js" as="script">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/style.css"><link rel="preconnect" href="https://fonts.googleapis.com">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href = "https://cruzilia.com.br/wp-content/themes/theme-cruzilia/fonts/FMBolyarSansPro/stylesheet.css" rel = "stylesheet" type = "text/css" />
+    <link rel="shortcut icon" href="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/favicon.ico" />
+    <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-907Z41HPKL"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-907Z41HPKL');
+    </script>
+    
+<script type="text/javascript" src="https://public.tableau.com/javascripts/api/tableau-2.9.1.min.js"></script>
+
+<script type="text/javascript">
+
+    window.addEventListener("load", mediaSizer);
+    //window.addEventListener("resize", mediaSizer);
+    // Listeners that will react when the page first loads or is resized.
+    // If any of these events take place the mediaSizer() function executes.
+
+    var vizList = [
+
+        "https://public.tableau.com/views/resultadoultracheese/AcompanhamentodeResultado?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/HUMANRESOURCES-HRExpensesDashboardBrasilultracheese/Cockpit?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/shared/9DP8W9RJS?:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/resultadomarcasmobiauto/AcompanhamentodeResultado?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/2-Templatespolipecas/Template?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/3-Exemplopolipecas/DashExemplo?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/Howhastheworldchangedsince1962/WorldIndicators?:language=en-US&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/Ocorrnciasultracheese/Reclamaes?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/RetailDemowithSpatialAnalyticspoptrade/LayoutdeLoja?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/FacebookAdsDashboard_15566377846980/ExecutiveSummary?:language=en-US&:toolbar=n&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/RepVendasBenchmarkultracheese/RepVendasBenchmark?:language=pt-BR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+
+        "https://public.tableau.com/views/SpendAnalyticsDashboard_16056925975720/Home?:apiInternalVersion=1.131.0&:disableUrlActionsPopups=n&navSrc=Opt&:embed=y&navType=0&:suppressDefaultEditBehavior=n&mobile=n&:toolbar=n&:hideEditButton=y&:hideEditInDesktopButton=n&:jsdebug=n&:apiExternalVersion=3.6.0&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/1-DesigningEffectiveDashboardsPublic/Intro?:language=en-US&:display_count=n&:origin=viz_share_link",
+        "https://public.tableau.com/views/Embedded_Analytics/Introduo?:language=en-US&:display_count=n&:origin=viz_share_link"
+
+
+
+    ];
+    // Array of Tableau Server URLs for dashboard or sheet navigation.
+
+    var viz,
+        vizLen = vizList.length,
+        vizCount = 0,
+        devType,
+        vHideTabs = true,
+        vHideToolbar = true;
+    var options = {
+        device: devType,
+    };
+
+
+    function mediaSizer() {
+        // Determines the correct viz layout according to screen sizes.
+        if (window.matchMedia("(max-width: 450px)").matches) {
+            //alert("I am a phone layout!");
+            devType = 'phone';
+            vWidth = 420;
+            vHeight = 2000;
+            launchViz(0);
+            vHeight = 1200;
+            launchViz(1);
+            vHeight = 2000;
+            //launchViz(3);
+            vHeight = 2000;
+           // launchViz(5);
+            vHeight = 1200;
+
+            launchViz(7);
+            vHeight = 2000;
+           //launchViz(8);
+            launchViz(10);
+
+            //options.device = 'phone';
+        } else if (window.matchMedia("(max-width: 980px)").matches) {
+            //alert("I am a tablet layout!");
+            devType = 'tablet';
+            vWidth = 980;
+            //options.device = 'tablet';
+            console.log("devtype: " + devType)
+            console.log("launch0")
+            launchViz(0);
+            console.log("launch1")
+            launchViz(1);
+            console.log("launch2")
+
+          //  launchViz(2);
+            //launchViz(3);
+           // launchViz(4);
+
+            launchViz(6);
+
+            // Launches the viz again with the new sizing at the current index of vizList.
+        } else {
+            //alert("I am a desktop layout!");
+            devType = 'desktop';
+            vWidth = 1600;
+            vHeight = 800;
+            //options.device = 'desktop';
+            console.log("devtype: " + devType)
+            console.log("launch0")
+            launchViz(0);
+            console.log("launch1")
+            vHeight = 800;
+            launchViz(1);
+            vHeight = 1000;
+            console.log("launch2")
+
+            //launchViz(2);
+            console.log("launch3")
+            //launchViz(3);
+           // launchViz(4);
+            vHideToolbar = true;
+            vHideTabs = true;
+          //  launchViz(5);
+            vWidth = 1000;
+            launchViz(6);
+            vWidth = 1600;
+
+            vHideToolbar = false;
+            vHideTabs = false;
+            vHeight = 800;
+            launchViz(7);
+            vWidth = 1600;
+           // launchViz(8);
+           // vHeight = 1000;
+            //launchViz(9);
+            vHeight = 800;
+            launchViz(10);
+            //vHeight = 1000;
+           // launchViz(11);
+            launchViz(12);
+            launchViz(13);
+
+            // Launches the viz again with the new sizing at the current index of vizList.
+        }
+
+    }
+
+
+    function launchViz(vizNav) {
+        // JS object targeting a div in the html document. (vizNav) will pass navigation values to move back and forth across vizList.
+        console.log("vizContainer" + vizNav)
+        console.log("devtype: " + devType)
+        var vizDiv = document.getElementById("vizContainer" + vizNav),
+            // Will embed the visualization on a div with id="VizContainer"
+            options = {
+                device: devType,
+                width: vWidth,
+                height: vHeight,
+                hideTabs: vHideTabs,
+                hideToolbar: vHideToolbar,
+                onFirstInteractive: function () {
+                    listenToMarksSelection();
+                }
+            };
+
+
+        var vizURL = vizList[vizNav];
+        // Dynamic URL returning the string from vizList at index = vizNav (viz to be displayed).
+
+        try {
+            // Initializes the viz from the array with desired options. 
+            viz = new tableau.Viz(vizDiv, vizURL, options);
+            if (!viz) throw 'viz not initialized'
+        }
+        catch (err) {
+            alert(err);
+        }
+        finally {
+            console.log('whatever')
+            console.count('initViz')
+        }
+
+    }
+
+</script>
+</head>
+<body>
+    <header id="js-header">
+        <div class="container">
+            <a href="https://cruzilia.com.br" class="logo">
+                <img  alt="logo" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia.png" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia.png" alt="logo"></noscript>
+            </a>
+            <nav>
+                <ul id="menu-header-principal" class="menu"><li id="menu-item-29" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="https://cruzilia.com.br/quem-somos/">Quem Somos</a></li>
+<li id="menu-item-26" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://cruzilia.com.br/produtos/">Produtos</a></li>
+<li id="menu-item-27" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://cruzilia.com.br/receitas/">Receitas</a></li>
+<li id="menu-item-25" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://cruzilia.com.br/noticias/">Notícias</a></li>
+<li id="menu-item-28" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://cruzilia.com.br/contato/">Contato</a></li>
+</ul>                <button class="btn-mobile" id="js-btn-menu-mobile">
+                    <img  alt="botao-mobile" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/btn-menu-mobile.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/btn-menu-mobile.svg" alt="botao-mobile"></noscript>                
+                </button>
+            </nav>
+        </div>
+        <meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v20.13 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Cruzília | A Queijaria Brasileira Mais Premiada do Mundo</title>
+	<meta name="description" content="A Cruzília foi fundada em 1948 e hoje somos a queijaria brasileira mais premiada do mundo, especialista na fabricação de queijos finos." />
+	<link rel="canonical" href="https://cruzilia.com.br/" />
+	<meta property="og:locale" content="pt_BR" />
+	<meta property="og:type" content="website" />
+	<meta property="og:title" content="Cruzília | A Queijaria Brasileira Mais Premiada do Mundo" />
+	<meta property="og:description" content="A Cruzília foi fundada em 1948 e hoje somos a queijaria brasileira mais premiada do mundo, especialista na fabricação de queijos finos." />
+	<meta property="og:url" content="https://cruzilia.com.br/" />
+	<meta property="og:site_name" content="Cruzília" />
+	<meta property="article:publisher" content="https://www.facebook.com/queijoscruzilia/" />
+	<meta property="article:modified_time" content="2021-12-20T12:05:43+00:00" />
+	<meta property="og:image" content="https://cruzilia.com.br/wp-content/uploads/2021/11/favicon-1.png" />
+	<meta property="og:image:width" content="512" />
+	<meta property="og:image:height" content="512" />
+	<meta property="og:image:type" content="image/png" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://cruzilia.com.br/","url":"https://cruzilia.com.br/","name":"Cruzília | A Queijaria Brasileira Mais Premiada do Mundo","isPartOf":{"@id":"https://cruzilia.com.br/#website"},"about":{"@id":"https://cruzilia.com.br/#organization"},"datePublished":"2021-09-29T15:17:34+00:00","dateModified":"2021-12-20T12:05:43+00:00","description":"A Cruzília foi fundada em 1948 e hoje somos a queijaria brasileira mais premiada do mundo, especialista na fabricação de queijos finos.","breadcrumb":{"@id":"https://cruzilia.com.br/#breadcrumb"},"inLanguage":"pt-BR","potentialAction":[{"@type":"ReadAction","target":["https://cruzilia.com.br/"]}]},{"@type":"BreadcrumbList","@id":"https://cruzilia.com.br/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Início"}]},{"@type":"WebSite","@id":"https://cruzilia.com.br/#website","url":"https://cruzilia.com.br/","name":"Cruzília","description":"A Queijaria Brasileira Mais Premiada do Mundo","publisher":{"@id":"https://cruzilia.com.br/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://cruzilia.com.br/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"pt-BR"},{"@type":"Organization","@id":"https://cruzilia.com.br/#organization","name":"Cruzília","url":"https://cruzilia.com.br/","logo":{"@type":"ImageObject","inLanguage":"pt-BR","@id":"https://cruzilia.com.br/#/schema/logo/image/","url":"https://cruzilia.com.br/wp-content/uploads/2021/11/favicon-1.png","contentUrl":"https://cruzilia.com.br/wp-content/uploads/2021/11/favicon-1.png","width":512,"height":512,"caption":"Cruzília"},"image":{"@id":"https://cruzilia.com.br/#/schema/logo/image/"},"sameAs":["https://www.facebook.com/queijoscruzilia/","https://www.instagram.com/queijoscruzilia/","https://www.youtube.com/channel/UChSrzIf-qHUcAx3GyKJbfVg"]}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//static.addtoany.com' />
+<link rel='stylesheet' id='wp-block-library-css' href='https://cruzilia.com.br/wp-includes/css/dist/block-library/style.min.css?ver=6.7' type='text/css' media='all' />
+<style id='classic-theme-styles-inline-css' type='text/css'>
+/*! This file is auto-generated */
+.wp-block-button__link{color:#fff;background-color:#32373c;border-radius:9999px;box-shadow:none;text-decoration:none;padding:calc(.667em + 2px) calc(1.333em + 2px);font-size:1.125em}.wp-block-file__button{background:#32373c;color:#fff;text-decoration:none}
+</style>
+<style id='global-styles-inline-css' type='text/css'>
+:root{--wp--preset--aspect-ratio--square: 1;--wp--preset--aspect-ratio--4-3: 4/3;--wp--preset--aspect-ratio--3-4: 3/4;--wp--preset--aspect-ratio--3-2: 3/2;--wp--preset--aspect-ratio--2-3: 2/3;--wp--preset--aspect-ratio--16-9: 16/9;--wp--preset--aspect-ratio--9-16: 9/16;--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;--wp--preset--shadow--natural: 6px 6px 9px rgba(0, 0, 0, 0.2);--wp--preset--shadow--deep: 12px 12px 50px rgba(0, 0, 0, 0.4);--wp--preset--shadow--sharp: 6px 6px 0px rgba(0, 0, 0, 0.2);--wp--preset--shadow--outlined: 6px 6px 0px -3px rgba(255, 255, 255, 1), 6px 6px rgba(0, 0, 0, 1);--wp--preset--shadow--crisp: 6px 6px 0px rgba(0, 0, 0, 1);}:where(.is-layout-flex){gap: 0.5em;}:where(.is-layout-grid){gap: 0.5em;}body .is-layout-flex{display: flex;}.is-layout-flex{flex-wrap: wrap;align-items: center;}.is-layout-flex > :is(*, div){margin: 0;}body .is-layout-grid{display: grid;}.is-layout-grid > :is(*, div){margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+:where(.wp-block-post-template.is-layout-flex){gap: 1.25em;}:where(.wp-block-post-template.is-layout-grid){gap: 1.25em;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}:where(.wp-block-columns.is-layout-grid){gap: 2em;}
+:root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='searchwp-live-search-css' href='https://cruzilia.com.br/wp-content/plugins/searchwp-live-ajax-search/assets/styles/style.css?ver=1.7.6' type='text/css' media='all' />
+<link rel='stylesheet' id='addtoany-css' href='https://cruzilia.com.br/wp-content/plugins/add-to-any/addtoany.min.css?ver=1.16' type='text/css' media='all' />
+<script type="text/javascript" id="addtoany-core-js-before">
+/* <![CDATA[ */
+window.a2a_config=window.a2a_config||{};a2a_config.callbacks=[];a2a_config.overlays=[];a2a_config.templates={};a2a_localize = {
+	Share: "Compartilhar",
+	Save: "Salvar",
+	Subscribe: "Inscrever",
+	Email: "Email",
+	Bookmark: "Favoritos",
+	ShowAll: "Mostrar tudo",
+	ShowLess: "Mostrar menos",
+	FindServices: "Procurar serviço(s)",
+	FindAnyServiceToAddTo: "Encontrar rapidamente qualquer serviço para",
+	PoweredBy: "Serviço fornecido por",
+	ShareViaEmail: "Share via email",
+	SubscribeViaEmail: "Subscribe via email",
+	BookmarkInYourBrowser: "Adicionar aos favoritos",
+	BookmarkInstructions: "Press Ctrl+D or \u2318+D to bookmark this page",
+	AddToYourFavorites: "Adicionar a favoritos",
+	SendFromWebOrProgram: "Send from any email address or email program",
+	EmailProgram: "Email program",
+	More: "More&#8230;",
+	ThanksForSharing: "Thanks for sharing!",
+	ThanksForFollowing: "Thanks for following!"
+};
+
+a2a_config.icon_color="#0a0a0a";
+/* ]]> */
+</script>
+<script type="text/javascript" async src="https://static.addtoany.com/menu/page.js" id="addtoany-core-js"></script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-includes/js/jquery/jquery.min.js?ver=3.7.1" id="jquery-core-js"></script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-includes/js/jquery/jquery-migrate.min.js?ver=3.4.1" id="jquery-migrate-js"></script>
+<script type="text/javascript" async src="https://cruzilia.com.br/wp-content/plugins/add-to-any/addtoany.min.js?ver=1.1" id="addtoany-jquery-js"></script>
+<link rel='shortlink' href='https://cruzilia.com.br/' />
+<link rel="alternate" title="oEmbed (JSON)" type="application/json+oembed" href="https://cruzilia.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcruzilia.com.br%2F" />
+<link rel="alternate" title="oEmbed (XML)" type="text/xml+oembed" href="https://cruzilia.com.br/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fcruzilia.com.br%2F&#038;format=xml" />
+		<script>
+			document.documentElement.className = document.documentElement.className.replace( 'no-js', 'js' );
+		</script>
+				<style>
+			.no-js img.lazyload { display: none; }
+			figure.wp-block-image img.lazyloading { min-width: 150px; }
+							.lazyload, .lazyloading { opacity: 0; }
+				.lazyloaded {
+					opacity: 1;
+					transition: opacity 400ms;
+					transition-delay: 0ms;
+				}
+					</style>
+		<link rel="icon" href="https://cruzilia.com.br/wp-content/uploads/2021/11/cropped-favicon-2-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://cruzilia.com.br/wp-content/uploads/2021/11/cropped-favicon-2-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://cruzilia.com.br/wp-content/uploads/2021/11/cropped-favicon-2-180x180.png" />
+<meta name="msapplication-TileImage" content="https://cruzilia.com.br/wp-content/uploads/2021/11/cropped-favicon-2-270x270.png" />
+    </header>
+
+    <div class="menu-mobile">
+        <div class="overlay js-overlay"></div>
+        <aside>
+            <a href="https://cruzilia.com.br">
+                <img  alt="logo"  data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia.png" class="logo lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia.png" alt="logo" class="logo lazy"></noscript>
+            </a>
+
+            <ul id="menu-header-principal-1" class="menu"><li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-29"><a href="https://cruzilia.com.br/quem-somos/">Quem Somos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-26"><a href="https://cruzilia.com.br/produtos/">Produtos</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-27"><a href="https://cruzilia.com.br/receitas/">Receitas</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-25"><a href="https://cruzilia.com.br/noticias/">Notícias</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-28"><a href="https://cruzilia.com.br/contato/">Contato</a></li>
+</ul>        </aside>
+    </div>
+
+
+<section class="s-hero-home"> 
+    <video autoplay muted loop id="myVideo">
+        <source src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/video/filme_vinhetas.webm" type="video/webm">
+    </video>
+</section>
+
+
+
+<!-- <section class="s-hero-home lazy" style="background-image: url(https://cruzilia.com.br/wp-content/uploads/2021/11/filme_vinhetas.gif" data-bg="">
+    <div class="container">
+        <div class="text">
+            <h1></h1>
+        </div>
+    </div>
+</section> -->
+
+
+
+
+<section class="s-box">
+    <div class="image-box-01 lazy" style="background-image: url(https://cruzilia.com.br/wp-content/uploads/2021/12/box-01-home.webp" data-bg="">
+        <h3 data-aos="fade-right">Queijos de  todas as almas, cada  um elaborado como  uma obra de arte</h3>
+    </div>
+    <div class="image-box-01 lazy" style="background-image: url(https://cruzilia.com.br/wp-content/uploads/2021/12/box-02-home.webp" data-bg="">
+        <h3 data-aos="fade-up">Feitos na Serra da Mantiqueira (MG), melhor terroir para produção de queijos.</h3>
+    </div>
+    <div class="image-box-01 lazy" style="background-image: url(https://cruzilia.com.br/wp-content/uploads/2021/12/box-03-home.webp" data-bg="">
+        <h3 data-aos="fade-left">A Queijaria brasileira mais premiada do mundo</h3>
+    </div>
+</section>
+<section class="s-sobre">
+    <div class="container">
+        <div class="text" data-aos="fade-up">
+            <h2>Quem Somos</h2>
+            <hr/>
+            <p>Somos a arte do queijo brasileiro. E dela vem nosso principal ingrediente.<br />
+Cada pedaço ou fatia é uma poesia ao paladar. Encanta. Surpreende. <br />
+Encontra o inigualável. O indescritível.<br />
+Nossos sabores são apaixonantes e misteriosos.<br />
+<br />
+Assim como nossa origem. Somos rústicos e inovadores, feitos no melhor terroir brasileiro.<br />
+Nas bucólicas paisagens da Serra da Mantiqueira. De lá, resgatamos a arte milenar de fazer queijo. Dos antigos mestres queijeiros, herdamos os saberes do velho continente e os sabores brasileiros. Conhecimentos refletidos em criações autênticas.<br />
+<br />
+Do tempo levado a perfeição: a maturação que dá o tom. <br />
+Somos o encontro de tradições. <br />
+Uma dança de almas intensas, equilibradas, vibrantes ou doces. <br />
+Todos carregando histórias como uma verdadeira obra.<br />
+<br />
+Raros. Nada se compara. <br />
+Uma combinação perfeita e inesquecível.<br />
+Especiais, assim como os melhores momentos do seu dia!<br />
+<br />
+Experimente essa sensação.<br />
+Conheça nossos queijos exclusivos.</p>
+            <h3>Conheça e surpreenda-se!</h3>
+            <div class="image">
+                <img  alt="img-selos" loading:"lazy" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/selos-certificacoes-cruzilia.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/selos-certificacoes-cruzilia.svg" alt="img-selos" loading:"lazy"></noscript>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="s-video-institucional"> 
+    <video preload="none" onclick="this.paused ? this.play() : this.pause();" 
+    <source src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/video/institucional_cruzilia.mp4" type="video/mp4" poster="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/bg-video-cruzilia-min.webp" class="bg_video-institucional" loading:"lazy" id="myVideoInstitucional">
+    </video>
+</section>
+
+
+<section class="s-cat-produtos">
+        <div class="container">
+            <div class="text">
+                <h2 data-aos="fade-down">Produtos</h2>
+                <hr data-aos="fade-up">
+			</div>
+            <div class="cards">
+                            <a href="/cruzilia_wp/produtos/#exclusivos">
+                    <div class="card">
+                        <div class="image" data-aos="fade-up">
+                            <img width="225" height="225"   alt="" decoding="async" fetchpriority="high" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3504-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504.png 350w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3504-225x225.png" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3504-225x225.png" class="attachment-posts-relacionados size-posts-relacionados lazy" alt="" decoding="async" fetchpriority="high" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3504-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3504.png 350w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                        </div>
+                            <button class="btn-primary" data-aos="fade-down">Queijos Exclusivos</button>
+                    </div>
+                </a>
+                                <a href="/cruzilia_wp/produtos/#especiais">
+                    <div class="card">
+                        <div class="image" data-aos="fade-up">
+                            <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3503-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503.png 350w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3503-225x225.png" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3503-225x225.png" class="attachment-posts-relacionados size-posts-relacionados lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3503-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3503.png 350w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                        </div>
+                            <button class="btn-primary" data-aos="fade-down">Queijos Especiais</button>
+                    </div>
+                </a>
+                                <a href="/cruzilia_wp/produtos/#cotidianos">
+                    <div class="card">
+                        <div class="image" data-aos="fade-up">
+                            <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3502-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502.png 350w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3502-225x225.png" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/3502-225x225.png" class="attachment-posts-relacionados size-posts-relacionados lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/3502-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/3502.png 350w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                        </div>
+                            <button class="btn-primary" data-aos="fade-down">Queijos Cotidianos</button>
+                    </div>
+                </a>
+                                <a href="/cruzilia_wp/produtos/#cremes">
+                    <div class="card">
+                        <div class="image" data-aos="fade-up">
+                            <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/350-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/350.png 350w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/350-225x225.png" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/350-225x225.png" class="attachment-posts-relacionados size-posts-relacionados lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/350-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-300x300.png 300w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/350-270x270.png 270w, https://cruzilia.com.br/wp-content/uploads/2021/12/350.png 350w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                        </div>
+                            <button class="btn-primary" data-aos="fade-down">Cremes</button>
+                    </div>
+                </a>
+                            </div>
+		</div>
+</section>
+
+
+
+
+<div style="text-align: center;">
+    <div style="display: inline-block;">
+        <p> Este é um micro-site criado somente para ilustrar o que seria o Tableau embedded no seu site. Somente alguns exemplos para inspira-los 
+        </p>
+        <p>na avaliação do Tableau e para conhecermos melhor o seu use case. Todos os dashboards apresentados contem dados ficticios para fins educacionais </p>
+        <div id="vizContainer0"></div>
+    </div>
+</div>
+
+
+    
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um exemplo de dashboard para acompanhamento por marcas.</p>
+                <div id="vizContainer3"></div>
+            </div>
+        </div> -->
+    
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um exemplo da comunidade Tableau sobre vendas de carros em UK</p>
+    
+                <div id="vizContainer2"></div>
+            </div>
+        </div> -->
+    
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard de um exemplo de template para que todos os usuários tenham facilidade para
+                    criar novos dashs e seguindo os padrões da empresa</p>
+    
+                <div id="vizContainer4"></div>
+            </div>
+        </div> -->
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard usando o template ilustrado no dash anterior</p>
+    
+                <div id="vizContainer5"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                
+                <p> Abaixo um dashboard que acompanha a distribuição de chamados de reclamações pelos clientes.</p>
+                
+                <div id="vizContainer7"></div>
+                </div>
+                </div>
+                <div style="text-align: center;">
+                    <div style="display: inline-block;">
+                        <p> - </p>
+                        <p> Abaixo um dashboard mais lúdico disponível no Tableau Public. Voce pode acompanhar a animação
+                            clicando no triangulo no canto inferior direito</p>
+                        <p>O Tableau Public é uma plataforma gratuita para explorar, criar e compartilhar publicamente
+                            visualizações de dados online. </p>
+                        <p> Com o maior repositório de visualizações de dados do mundo para aprender, o Tableau Public
+                            facilita o desenvolvimento de habilidades de dados.</p>
+            
+                        <div id="vizContainer6"></div>
+                    </div>
+                </div>
+
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard que acompanha despesas de recursos humanos. Voce pode encontrar esse
+                    dashboard nos Accelerators Tableau</p>
+                <p>Os aceleradores do Tableau são painéis pré-criados projetados para ajudar você a obter um impulso
+                    inicial na análise de dados.</p>
+                <p>Adaptados a setores específicos e aplicativos corporativos, os Aceleradores são criados com dados
+                    de amostra que você pode trocar por seus próprios dados,</p>
+                <p> permitindo que você descubra insights com configuração mínima.</p>
+                <div id="vizContainer1"></div>
+            </div>
+        </div>
+     <!--    <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Avalie a organização das prateleiras das lojas com análise espacial.
+                <p> -- </p>
+                <div id="vizContainer8"></div>
+            </div>
+        </div> -->
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+    
+                <p> - </p>
+                <p> Abaixo um dashboard para ánalise de facebook ads. Também disponível nos Accelerators Tableau</p>
+                <p>Avalie e melhore o desempenho de suas campanhas de marketing com o Facebook Ads.
+                    Identifique as campanhas mais impactantes.</p>
+                <p> Mergulhe fundo na eficiência da campanha em: Reconhecimento, Engajamento, Conversão.</p>
+                <p>Melhorar o retorno sobre o investimento.
+                    Audite os resultados da otimização da campanha ao longo do tempo.</p>
+                <div id="vizContainer9"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard para acompanhamento dos Vendedores para Benchmark</p>
+                <p>Permite um benchmark para entenderem como estão performando comparado aos pares ou outros
+                    parceiros do mesmo mercado</p>
+                <p> - - </p>
+                <div id="vizContainer10"></div>
+            </div>
+        </div>
+    <!--     <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p> - </p>
+                <p> Abaixo um dashboard para acompanhamento de contratos. Também disponível nos Accelerators Tableau
+                </p>
+                <p>Avalie e monitore seu volume de gastos
+                    Entenda melhor sua alocação de gastos em categorias de gastos e fornecedores</p>
+                <p>Monitore e melhore os KPIs</p>
+                <div id="vizContainer11"></div>
+            </div>
+        </div> -->
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p>-</p>
+                <p> O dashboard a seguir é um exemplo de webinar que utilizamos no inicio da jornada para criação de
+                    cultura de dados. </p>
+                <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre a plataforma
+                    Tableau e como te ajudamos a construir cultura de dados/>
+                <p>-</p>
+                <div id="vizContainer12"></div>
+            </div>
+        </div>
+        <div style="text-align: center;">
+            <div style="display: inline-block;">
+                <p>-</p>
+                <p> O dashboard a seguir é um exemplo de webinar sobre embedded. </p>
+                <p>Tem muita informação relevante para que voce possa conhecer um pouco mais sobre embedded</p>
+                <p>-</p>
+                <div id="vizContainer13"></div>
+            </div>
+        </div>
+    </div>
+
+
+
+<section class ="s-receitas">
+    <div class="container">
+        <div class="text">
+            <h2 data-aos="fade-down">Receitas</h2>
+            <hr  data-aos="fade-up" style="border: 2px solid #fff;"/>
+        </div>
+    </div>
+    <div class="swiper container-fluid">
+        <!-- Swiper -->
+        <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                <div class="image">
+                    <img  alt="" loading:"lazy" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/MG_1034.jpg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20667'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/MG_1034.jpg" alt="" loading:"lazy"></noscript>
+                </div>
+                <div class="conteudo" data-aos="fade-up">
+                    <h3>OVOS EM NUVENS COM MINAS PADRÃO</h3>
+                    <a href="https://cruzilia.com.br/receita/ovos-em-nuvens-com-minas-padrao-2/"><button class="btn-primary white">Ver Mais</button></a>
+                </div>
+            </div>
+                        <div class="swiper-slide">
+                <div class="image">
+                    <img  alt="" loading:"lazy" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/MG_0985.jpg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20667'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/MG_0985.jpg" alt="" loading:"lazy"></noscript>
+                </div>
+                <div class="conteudo" data-aos="fade-up">
+                    <h3>MANTEIGA COM MALBEC E ENTRECOT</h3>
+                    <a href="https://cruzilia.com.br/receita/manteiga-com-malbec-e-entrecot/"><button class="btn-primary white">Ver Mais</button></a>
+                </div>
+            </div>
+                        <div class="swiper-slide">
+                <div class="image">
+                    <img  alt="" loading:"lazy" data-src="https://cruzilia.com.br/wp-content/uploads/2021/11/MG_0662.jpg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201000%20667'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/11/MG_0662.jpg" alt="" loading:"lazy"></noscript>
+                </div>
+                <div class="conteudo" data-aos="fade-up">
+                    <h3>CREME DE GOUDA COM CERVEJA</h3>
+                    <a href="https://cruzilia.com.br/receita/dutch-baby-com-gruyere-aspargos-e-parma/"><button class="btn-primary white">Ver Mais</button></a>
+                </div>
+            </div>
+                    </div>
+        <div class="swiper-pagination"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+    </div>
+</section>
+
+<section class="s-noticias">
+    <div class="container">
+        <div class="text">
+            <h2 data-aos="fade-down">Notícias</h2>
+            <hr data-aos="fade-up">
+        </div>
+        <div class="ultimas-noticias">
+                        <a href="https://cruzilia.com.br/noticias/premiacoes/conheca-5-super-dicas-para-escolher-o-melhor-queijo/">
+                <div class="card-noticia">
+                    <div class="image-wrapper" data-aos="fade-down">
+                    <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-225x225.jpg 225w, https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-90x90.jpg 90w, https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-270x270.jpg 270w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-225x225.jpg" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-225x225.jpg" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-225x225.jpg 225w, https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-90x90.jpg 90w, https://cruzilia.com.br/wp-content/uploads/2021/10/MG_0216-270x270.jpg 270w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                    </div>
+                    <div class="post-desc" data-aos="fade-up">
+                                                    <h3>A curiosa história do Santo Casamenteiro</h3>
+                                                <p><p>Queijo exclusivo da marca carrega a fama de levar ao altar quem degusta o produto.</p>
+</p>
+                        <button class="btn-primary">Ler mais</button>
+                    </div>
+                </div>
+            </a>
+                        <a href="https://cruzilia.com.br/noticias/novidades/acompanhe-as-novidades-do-novo-site-da-cruzilia-2/">
+                <div class="card-noticia">
+                    <div class="image-wrapper" data-aos="fade-down">
+                    <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-270x270.png 270w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-225x225.png" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-225x225.png" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-225x225.png 225w, https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-90x90.png 90w, https://cruzilia.com.br/wp-content/uploads/2021/10/FEVEREIRO_Release-Institucional_Rebranding_Cruzilia-270x270.png 270w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                    </div>
+                    <div class="post-desc" data-aos="fade-up">
+                                                    <h3>Cruzília passa por Rebranding</h3>
+                                                <p><p>Embalagens e marca, reforçando seu posicionamento de queijaria brasileira mais premiada no mundo.</p>
+</p>
+                        <button class="btn-primary">Ler mais</button>
+                    </div>
+                </div>
+            </a>
+                        <a href="https://cruzilia.com.br/noticias/novidades/cruzilia-e-destaque-em-premiacao-internacional/">
+                <div class="card-noticia">
+                    <div class="image-wrapper" data-aos="fade-down">
+                    <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-225x225.jpg 225w, https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-90x90.jpg 90w, https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-270x270.jpg 270w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-225x225.jpg" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-225x225.jpg" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-225x225.jpg 225w, https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-90x90.jpg 90w, https://cruzilia.com.br/wp-content/uploads/2021/11/Mussarelas-Tranca-1-270x270.jpg 270w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                    </div>
+                    <div class="post-desc" data-aos="fade-up">
+                                                    <h3>Queijos Especiais da Cruzília em Skinpack</h3>
+                                                <p><p>Queijos Especiais da Cruzília em embalagem Skinpack entregam praticidade ao consumidor.</p>
+</p>
+                        <button class="btn-primary">Ler mais</button>
+                    </div>
+                </div>
+            </a>
+                        <a href="https://cruzilia.com.br/noticias/novidades/parceria-entre-cruzilia-e-grand-cru-reforca-excelencia-das-marcas-aos-membros-da-confraria-clube-vinho/">
+                <div class="card-noticia">
+                    <div class="image-wrapper" data-aos="fade-down">
+                    <img width="225" height="225"   alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-225x225.jpeg 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-90x90.jpeg 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-270x270.jpeg 270w"  data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-225x225.jpeg" data-sizes="(max-width: 225px) 100vw, 225px" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" /><noscript><img width="225" height="225" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20225%20225'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-225x225.jpeg" class="attachment-posts-relacionados size-posts-relacionados wp-post-image lazy" alt="" decoding="async" data-srcset="https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-225x225.jpeg 225w, https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-90x90.jpeg 90w, https://cruzilia.com.br/wp-content/uploads/2021/12/RELEASE_Azulejos-270x270.jpeg 270w" data-sizes="(max-width: 225px) 100vw, 225px" /></noscript>                    </div>
+                    <div class="post-desc" data-aos="fade-up">
+                                                    <h3>Parceria entre Cruzília e Grand Cru</h3>
+                                                <p><p>Parceria entre Cruzília e Grand Cru reforça excelência  das marcas aos membros da Confraria Clube Vinho.</p>
+</p>
+                        <button class="btn-primary">Ler mais</button>
+                    </div>
+                </div>
+            </a>
+                                                            </div>
+    </div>
+</section>
+
+<section class="s-image-ante-rodape" data-aos="fade-down">
+</section>
+
+
+
+    <footer>
+        <div class="container" data-aos="fade-down">
+            <div class="footer-newsletter">
+                <div class="info">
+                    <h3>Quer receber novidades da Cruzília?</h3>
+                    <p>Cadastre-se e receba em seu e-mail.</p>
+                </div>
+                
+                
+                <div class="newsletter">
+                    
+<div class="wpcf7 no-js" id="wpcf7-f129-o1" lang="pt-BR" dir="ltr">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/#wpcf7-f129-o1" method="post" class="wpcf7-form init mailchimp-ext-0.5.72" aria-label="Formulários de contato" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="129" />
+<input type="hidden" name="_wpcf7_version" value="5.8" />
+<input type="hidden" name="_wpcf7_locale" value="pt_BR" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f129-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<div class="form-inline">
+	<div class="campo-texto">
+		<p><label> Nome<br />
+<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required campo-text-form" aria-required="true" aria-invalid="false" value="" type="text" name="your-name" /></span> </label>
+		</p>
+	</div>
+	<div class="campo-texto">
+		<p><label> E-mail<br />
+<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email campo-email-form" aria-required="true" aria-invalid="false" value="" type="email" name="your-email" /></span> </label>
+		</p>
+	</div>
+	<div class="campo-submit">
+		<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="Cadastrar" />
+		</p>
+	</div>
+</div><div class="wpcf7-response-output" aria-hidden="true"></div><p style="display: none !important"><span class="wpcf7-form-control-wrap referer-page"><input type="hidden" name="referer-page" value="https://www.google.com/" data-value="https://www.google.com/" class="wpcf7-form-control wpcf7-text referer-page" aria-invalid="false"></span></p>
+<!-- Chimpmatic extension by Renzo Johnson -->
+</form>
+</div>
+                </div>
+                <div class="text-newsletter">
+                    <p>A Cruzília oferece o serviço de newsletter com divulgação de informações acerca de promoções, ofertas, receitas e novidades em relação a seus produtos e à empresa. </br>Ao optar por se inscrever neste serviço você aceita o tratamento dos dados pessoais para o envio das comunicações da Cruzília.</p>
+                </div>
+            </div>
+            <div class="info-contato">
+                <div class="contato"> 
+                    <p>Av. José Pinto Ribeiro Sobrinho, 631<br>  
+                        Cruzília/MG – CEP 37445-000<br> 
+                        sac@ultracheese.com.br<br>
+                        0800 494 1067 
+                    </p>
+                </div>
+                <img  alt="logo-cruzilia-rodape"  data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia-rodape.png" class="logo-rodape lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/logo-cruzilia-rodape.png" alt="logo-cruzilia-rodape" class="logo-rodape lazy"></noscript>
+                <div class="redes-sociais">
+                    <h4>Siga-nos</h4>
+                    <ul>
+                        <a target="_blank" href="https://www.facebook.com/queijoscruzilia/">
+                            <li>
+                                <img  alt="icone-facebook" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-facebook.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-facebook.svg" alt="icone-facebook"></noscript>
+                            </li>
+                        </a>
+                        <a target="_blank" href="https://www.instagram.com/queijoscruzilia/">
+                            <li>
+                                <img  alt="icone-instagram" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-instagram.svg" class="lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-instagram.svg" alt="icone-instagram"></noscript>
+                            </li>
+                        </a>
+                        <a target="_blank" href="https://www.youtube.com/channel/UChSrzIf-qHUcAx3GyKJbfVg">
+                            <li>
+                                <img   alt="icone-youtube" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-youtube.svg" class="icone-youtube lazyload" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="><noscript><img class="icone-youtube lazy" src="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%201%201'%3E%3C/svg%3E" data-src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/img/icone-youtube.svg" alt="icone-youtube"></noscript>
+                            </li>
+                        </a>
+                    </ul>
+                    <h4>@queijoscruzilia</h4>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- AOS Animate-->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+
+    <!-- Initialize Swiper Sobre-->
+    <script>
+      var swiper = new Swiper(".galeria-historia-sobre", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+      });
+    </script>
+
+    <!-- Initialize Swiper Sobre-->
+    <script>
+      var swiper = new Swiper(".container-fluid", {
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        
+        pagination: {
+          el: ".swiper-pagination",
+        },
+        autoplay: {
+          delay: 2500,
+          disableOnInteraction: false,
+        },
+      });
+    </script>
+
+    <!--Animate-->
+    <script>
+    AOS.init({
+        duration: 800,
+        once: true,
+        }
+    );
+    </script>
+        
+    
+
+<script src="https://cruzilia.com.br/wp-content/themes/theme-cruzilia/js/scripts.js"></script>
+
+
+
+        <style>
+            .searchwp-live-search-results {
+                opacity: 0;
+                transition: opacity .25s ease-in-out;
+                -moz-transition: opacity .25s ease-in-out;
+                -webkit-transition: opacity .25s ease-in-out;
+                height: 0;
+                overflow: hidden;
+                z-index: 9999995; /* Exceed SearchWP Modal Search Form overlay. */
+                position: absolute;
+                display: none;
+            }
+
+            .searchwp-live-search-results-showing {
+                display: block;
+                opacity: 1;
+                height: auto;
+                overflow: auto;
+            }
+
+            .searchwp-live-search-no-results {
+                padding: 3em 2em 0;
+                text-align: center;
+            }
+
+            .searchwp-live-search-no-min-chars:after {
+                content: "Continue typing";
+                display: block;
+                text-align: center;
+                padding: 2em 2em 0;
+            }
+        </style>
+                <script>
+            var _SEARCHWP_LIVE_AJAX_SEARCH_BLOCKS = true;
+            var _SEARCHWP_LIVE_AJAX_SEARCH_ENGINE = 'default';
+            var _SEARCHWP_LIVE_AJAX_SEARCH_CONFIG = 'default';
+        </script>
+        <link rel='stylesheet' id='contact-form-7-css' href='https://cruzilia.com.br/wp-content/plugins/contact-form-7/includes/css/styles.css?ver=5.8' type='text/css' media='all' />
+<script type="text/javascript" src="https://cruzilia.com.br/wp-content/plugins/contact-form-7/includes/swv/js/index.js?ver=5.8" id="swv-js"></script>
+<script type="text/javascript" id="contact-form-7-js-extra">
+/* <![CDATA[ */
+var wpcf7 = {"api":{"root":"https:\/\/cruzilia.com.br\/wp-json\/","namespace":"contact-form-7\/v1"},"cached":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-content/plugins/contact-form-7/includes/js/index.js?ver=5.8" id="contact-form-7-js"></script>
+<script type="text/javascript" id="swp-live-search-client-js-extra">
+/* <![CDATA[ */
+var searchwp_live_search_params = [];
+searchwp_live_search_params = {"ajaxurl":"https:\/\/cruzilia.com.br\/wp-admin\/admin-ajax.php","origin_id":8,"config":{"default":{"engine":"default","input":{"delay":300,"min_chars":3},"results":{"position":"bottom","width":"auto","offset":{"x":0,"y":5}},"spinner":{"lines":12,"length":8,"width":3,"radius":8,"scale":1,"corners":1,"color":"#424242","fadeColor":"transparent","speed":1,"rotate":0,"animation":"searchwp-spinner-line-fade-quick","direction":1,"zIndex":2000000000,"className":"spinner","top":"50%","left":"50%","shadow":"0 0 1px transparent","position":"absolute"}}},"msg_no_config_found":"No valid SearchWP Live Search configuration found!","aria_instructions":"When autocomplete results are available use up and down arrows to review and enter to go to the desired page. Touch device users, explore by touch or with swipe gestures."};;
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-content/plugins/searchwp-live-ajax-search/assets/javascript/dist/script.min.js?ver=1.7.6" id="swp-live-search-client-js"></script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-content/plugins/wp-smushit/app/assets/js/smush-lazy-load.min.js?ver=3.15.3" id="smush-lazy-load-js"></script>
+<script type="text/javascript" id="cf7-extras-js-extra">
+/* <![CDATA[ */
+var cf7_extras = {"events":{"track-ga":[],"redirect-success":[]},"forms":{"129":{"title":"Newsletter","redirect_url":""}}};
+/* ]]> */
+</script>
+<script type="text/javascript" src="https://cruzilia.com.br/wp-content/plugins/contact-form-7-extras/assets/js/controls.js?ver=0.8.0" id="cf7-extras-js"></script>
+<script>window.w3tc_lazyload=1,window.lazyLoadOptions={elements_selector:".lazy",callback_loaded:function(t){var e;try{e=new CustomEvent("w3tc_lazyload_loaded",{detail:{e:t}})}catch(a){(e=document.createEvent("CustomEvent")).initCustomEvent("w3tc_lazyload_loaded",!1,!1,{e:t})}window.dispatchEvent(e)}}</script><script async src="https://cruzilia.com.br/wp-content/plugins/w3-total-cache/pub/js/lazyload.min.js"></script></body>
+</html>
+<!--
+Performance optimized by W3 Total Cache. Learn more: https://www.boldgrid.com/w3-total-cache/
+
+Page Caching using disk: enhanced 
+Lazy Loading
+Database Caching 9/120 queries in 0.129 seconds using disk
+
+Served from: cruzilia.com.br @ 2024-11-19 10:13:02 by W3 Total Cache
+-->
